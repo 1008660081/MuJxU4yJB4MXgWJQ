@@ -22,7 +22,7 @@ def queueRequests(target, wordlists):
                            pipeline=True
                            )
 
-    for word in open('C://Users/liqiye/Desktop/amazon/xss/burp.log'):
+    for word in open('C://Users/?/xss/burp.log'):
         engine.queue(target.req, word.rstrip())
 
 
@@ -51,7 +51,7 @@ def handleResponse(req, interesting):
     path = match.group(2)
     
     #记录到日志
-    output_file = open("C://Users/liqiye/Desktop/amazon/log.txt","a+")
+    output_file = open("C://Users/?/log.txt","a+")
     RetryCounts = 'Retry:' + str(retry_counts.get(path, 0))
     output_file.write('{:<10} {:<50} {:<10} {:<15}\n'.format(str(req.status), path, str(req.length), RetryCounts))
 
